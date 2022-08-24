@@ -1,0 +1,73 @@
+server:
+  port: '8080'
+
+spring:
+  profiles:
+    active: test
+
+---
+
+spring:
+  h2:
+    console:
+      enabled: 'true'
+  datasource:
+    username: sa
+    url: jdbc:h2:mem:dcbapp
+    driverClassName: org.h2.Driver
+    password: ''
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  config:
+    activate:
+      on-profile: dev
+welcome:
+  message: Welcome to Daily Code Buffer!!
+
+---
+
+spring:
+  h2:
+    console:
+      enabled: 'true'
+  datasource:
+    username: sa
+    url: jdbc:h2:mem:dcbapp
+    driverClassName: org.h2.Driver
+    password: ''
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  config:
+    activate:
+      on-profile: prod
+welcome:
+  message: Welcome to Daily Code Buffer!!
+
+---
+
+spring:
+  h2:
+    console:
+      enabled: 'true'
+  datasource:
+    username: sa
+    url: jdbc:h2:mem:dcbapp
+    driverClassName: org.h2.Driver
+    password: ''
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  config:
+    activate:
+      on-profile: test
+welcome:
+  message: Welcome to Daily Code Buffer!!
+
+management:
+  endpoints:
+    web:
+      exposure:
+        inclue: "*"
+        exclude: "env, beans"
+
+
+
